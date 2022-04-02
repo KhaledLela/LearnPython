@@ -10,8 +10,10 @@ def test_for(words):
         print(w, len(w))
 
 
+test_for(['Learn', 'Python', 'Easy'])
+
 # test_for(['KH','AML','AH'])
-# test_for(['Python','is','Awsome'])
+# test_for(['Python','is','Awesome'])
 
 
 users = {'KL': '01020', 'AH': '01010', 'IML': '01010'}
