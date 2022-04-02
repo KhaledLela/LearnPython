@@ -9,3 +9,6 @@ https://drive.google.com/drive/folders/104wg5mvSaA989sHeM-rDM3MXk5fvsuCG?usp=sha
 
 دا رابط الشرح من الاجتماع الماضى على الجوجل دريف:
 https://drive.google.com/file/d/1jNPX5e6OhfenZ1pFftAKHZlZB0GOej98/view?usp=sharing
+
+
+https://docs.python.org/3/tutorial/index.html
