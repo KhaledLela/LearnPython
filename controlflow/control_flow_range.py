@@ -1,8 +1,9 @@
 # https://docs.python.org/3.8/tutorial/controlflow.html#the-range-function
+x = 10
 
 def test_range():
-    for i in range(10):
-        if i % 2 != 0:
+    for i in range(2,10,2):
+        if i % 2 == 0: #
             print(i)
 
 test_range()

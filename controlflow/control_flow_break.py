@@ -6,6 +6,7 @@ def check_range():
             if n % x == 0:
                 print(n, 'equals', x, '*', n // x)
                 break
+                continue
         else:
             # loop fell through without finding a factor
             print(n, 'is a prime number')

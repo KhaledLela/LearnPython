@@ -9,7 +9,7 @@ def test_for(words):
     for w in words:
         print(w, len(w))
 
-
+# 0 , 1 , 2
 test_for(['Learn', 'Python', 'Easy'])
 
 # test_for(['KH','AML','AH'])
