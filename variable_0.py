@@ -1,4 +1,14 @@
 name = "Ahmed Mohammed"
-print("I have a friend, he is called " + name)
-print(name + " live in Mansoura.")
-print(name + " with his family.")
+x = 10
+y = 20
+ago = 14
+
+# email = input("Enter email")
+# password = input("enter your password")
+#
+# print("I have a friend, he is called " + name)
+# print(name + " live in Mansoura.")
+# print(name + " with his family.")
+
+
+print(name + str(ago))
