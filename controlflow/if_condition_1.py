@@ -14,7 +14,7 @@ name = input('من فضلك قم بإدخال الاسم:\n')
 age = int(input('من فضلك قم بإدخال السن:\n'))
 
 x = bool # boolean = True=1 | False= 0
-if age <= 14:
+if age <= 14: # True/False
     pname_age()
     print('لايوجد تطعيم لهذة الفئة')
 elif age >14 and age <=25:

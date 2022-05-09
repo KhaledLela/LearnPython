@@ -3,7 +3,7 @@
 x = int(input("Please enter an integer: "))
 # Please enter an integer: 42
 # and , or , not => boolean
-if x < 0 and  x > -5: # True, False
+if 0 > x > -5: # True, False
     x = 0
     print('Negative changed to zero')
 elif x == 0:
