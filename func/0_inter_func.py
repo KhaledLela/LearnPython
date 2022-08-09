@@ -1,3 +1,5 @@
+# https://docs.python.org/3/tutorial/controlflow.html#defining-functions
+
 # Shadows built-in name 'type'
 type = type(32)
 

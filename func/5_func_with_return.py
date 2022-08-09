@@ -1,3 +1,5 @@
+# https://docs.python.org/3/tutorial/controlflow.html#defining-functions
+
 def fib2(n):  # return Fibonacci series up to n
     """Return a list containing the Fibonacci series up to n."""
     result = []
