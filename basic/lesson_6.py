@@ -24,7 +24,7 @@ while value != 'done':
         try:
             total += int(value)
             count += 1
-        except ValueError:
+        except value error:
             print("On Error:: Should be number or done")
         else:
             print("Else:: other error!")

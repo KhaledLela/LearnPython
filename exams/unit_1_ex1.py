@@ -9,7 +9,7 @@ Between 3 quotes you can add comments with multi lines.
 # if grade > 1.0 and grade < 0: # should with valid range
 # if 1.0 < grade < 0: # and can be simplified 
 '''
-if grade > 1.0 or grade > 0:
+if grade > 1.0 or grade < 0:
     print("Out of range")
 elif grade >= 0.9:  # grade = 0.92
     print("A")
