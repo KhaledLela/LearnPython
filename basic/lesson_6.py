@@ -25,7 +25,11 @@ while value != 'done':
             total += int(value)
             count += 1
         except ValueError:
-            print("Error:: Should be number or done")
+            print("On Error:: Should be number or done")
+        else:
+            print("Else:: other error!")
+        finally:
+            print("Finally:: Release")
 print("Total= " + str(total))
 print("Count= " + str(count))
 print("average= " + str(total/count))
