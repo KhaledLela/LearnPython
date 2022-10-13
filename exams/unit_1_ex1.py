@@ -1,4 +1,4 @@
-grade = float(input("enter your degree "))
+grade = float(input("Enter your degree:\n"))
 '''
 Between 3 quotes you can add comments with multi lines.
 # Single line comment 
