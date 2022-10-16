@@ -2,11 +2,14 @@
 Try statement
 """
 try:
-    1/0
+    1 / 0
     print("after error")
 except ZeroDivisionError:
     print("ZeroDivisionError error")
-
+except (RuntimeError, ArithmeticError):
+    print("ZeroDivisionError error")
+except Exception:
+    print("ZeroDivisionError error")
 # try:
 #     1/0
 #     # raise Exception
