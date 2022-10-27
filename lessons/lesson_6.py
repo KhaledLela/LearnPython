@@ -32,5 +32,8 @@ while value != 'done':
             print("Finally:: Release")
 print("Total= " + str(total))
 print("Count= " + str(count))
-print("average= " + str(total/count))
+try:
+    print("average= " + str(total/count))
+except ZeroDivisionError:
+    print("You should at least enter one value")
 
