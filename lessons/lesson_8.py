@@ -24,9 +24,7 @@ except Exception:
 #     1 / 0
 #     print("after error")
 # except ZeroDivisionError:
-#     print("ZeroDivisionError error")
-# except (RuntimeError, ArithmeticError):
-#     print("ZeroDivisionError error")
+#     print("zero div error")
 # except Exception:
 #     print("ZeroDivisionError error")
 # try:
