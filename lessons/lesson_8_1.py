@@ -6,31 +6,26 @@
 #                "finally" ":" suite
 
 # 1. Exception handlers
-# try:
-#     print("try block")
-# except (ValueError, ArithmeticError):
-#     print("except block")
-# except TypeError:
-#     print("type error")
-# except Exception:
-#     print("exception")
-# except:
-#     print()
-# else:
-#     print("else block!")
-# finally:
-#     print("finally block!")
-
-# 2. Cleanup code | release resources
 try:
-    exit(0)
+    exit(1)
+    print("No error!")
 except ZeroDivisionError:
-    print("You can not divided by zero")
-except ArithmeticError as x:
-    print("arithmetic error!", x)
+    print("can't div by zero")
+except ArithmeticError:
+    print("arithemtic error!")
 except Exception:
-    print("exception!")
-except BaseException as x:
-    print("other error!",x)
+    print("Exception error!")
+# except BaseException:
+#     print("Base error!")
+# except:
+#     print("Base error!")
+else:
+    print("else block!")
 finally:
     print("finally block!")
+
+# 2. Cleanup code | release resources
+# try:
+#     print("try finally!")
+# finally:
+#     print("finally block!")
