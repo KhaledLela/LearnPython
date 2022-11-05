@@ -9,7 +9,7 @@ s = 'abcdefgh'
 # for i in range(0,len(s),2):
 #     print(s[i])
 #
-i =0
+# i =0
 # while i<len(s):
 #     print(s[i])
 #     i+=1
