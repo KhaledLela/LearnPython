@@ -9,9 +9,8 @@ print(str_nums)
 num=[]
 
 x = [0]
-
 for n in str_nums:
-    if  is None or maxnums < n:
+    if  maxnums or maxnums < n:
         maxnums= n
     if minnums is None or minnums > n:
         minnums = n
