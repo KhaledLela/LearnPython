@@ -1,5 +1,5 @@
 """
 Write a program ask user for input twice
-two values and print larger value
+v1 & v2 and print larger value
 
 """
