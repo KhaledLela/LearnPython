@@ -15,5 +15,3 @@ for word in words:
 print(w_counts)
 print("repetition count", len(words))
 
-
-+9*-
