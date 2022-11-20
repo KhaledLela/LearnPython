@@ -1,9 +1,6 @@
 num = int(input('Enter number:\n'))
 while True:
-    if num == 1:
-        print('Not a prime number')
-        break
-    if num == 0:
+    if num < 2:
         print('Not a prime number')
         break
     for i in range(2, num):
