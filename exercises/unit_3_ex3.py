@@ -14,6 +14,10 @@ words = s.split()
 wc = {}
 for word in words:
     wc[word] = wc.get(word, 0) + 1
+    # try:
+    #     wc[word] = wc[word] + 1
+    # except KeyError:
+    #     wc[word] = 1
 print(wc)
 
 max_count = 0
