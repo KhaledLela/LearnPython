@@ -12,11 +12,11 @@
 # [1, 2, 3]
 
 
-def f(a, L=None):
-    if L is None:
-        L = []
-    L.append(a)
-    return L
+def f(a, m = None):
+    if m is None:
+        m = []
+    m.append(a)
+    return m
 
 
 # This will print
