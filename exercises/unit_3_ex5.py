@@ -8,3 +8,13 @@ ex. 5
 ex. 9
 9 is not a prime number.
 """
+num = int(input('enter the number:\n'))
+if num < 2:
+    print(num, 'is not a prime number')
+else:
+    for i in range(2, num):
+        if (num % i) == 0:
+            print(num, 'is not a prime number!')
+            break
+    else:
+        print(num, 'is a prime number!')
