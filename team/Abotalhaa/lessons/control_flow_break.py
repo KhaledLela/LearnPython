@@ -1,7 +1,10 @@
 # https://docs.python.org/3.8/tutorial/controlflow.html#break-and-continue-statements-and-else-clauses-on-loops
 # break and continue Statements, and else Clauses on Loops
+num1 = int(input('Enter number:\n'))
+
+
 def check_range():
-    for n in range(2, 10):
+    for n in range(2, num1+1):
         for x in range(2, n):
             if n % x == 0:
                 print(n, 'equals', x, '*', n // x)
@@ -13,7 +16,7 @@ def check_range():
 
 # عمل دالة حتى يمكن استدعائها
 def check_pass():
-    for num in range(2, 10):
+    for num in range(2, num1+1):
         if num % 2 == 0:
             print("Found an even number", num)
             continue
@@ -21,5 +24,6 @@ def check_pass():
 
 
 # call function - استدعاء الدالة
-check_range()
+# check_range()
 # check_pass()
+
