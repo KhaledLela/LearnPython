@@ -8,9 +8,10 @@
 # كل كلمة - مقابل عدد مرات التكرار
 # من خلال الفهرس نبحث على اكثر الكلمات تكرارا
 # وعدد مرات تكررها
+TEXT_IO = open(filename, 'r')
 
 filename = input('Please enter file name/path:\n') # أدخل اسم الملف او المسار
-lines = open(filename, 'r') # r = read  للقراءة  & w = write للكتابة
+lines = TEXT_IO  # r = read  للقراءة  & w = write للكتابة
 
 w_counts = dict() # الفهرس بتاع التكرار
 for line in lines: # تكرار على السطور داخل الملف
