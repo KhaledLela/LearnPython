@@ -7,6 +7,7 @@ Write a python program to print revers hill star pattern:
                      *      *      *
                             *
 """
+
 n = int(input("Enter the size:\n"))
 for i in range(n):
     for j in range(i+1):

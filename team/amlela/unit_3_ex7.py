@@ -8,6 +8,3 @@ factorial = 1
 # write you code
 # here...
 
-for n in range(1, n):
-    if x * n == 1:
-         print("Factorial of", n, "is:", factorial)
