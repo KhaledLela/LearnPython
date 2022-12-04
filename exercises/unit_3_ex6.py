@@ -14,4 +14,13 @@ Hints: (ملاحظات)
 - print same line = الطباعة فى نفس السطر
 - end = implicit '\n' change to end =""
 """
-num = 5
+num = int(input("Enter the size:\n"))
+for i in range(1, num):
+    for j in range(1, i + 1):
+        print("*", end=" ")
+    print("")
+
+for i in range(num, 1, -1):  # i = 5
+    for j in range(1, i+1):
+        print("*", end=" ")
+    print("")
