@@ -6,4 +6,4 @@ Write a python program to print following hill star pattern:
                *      *      *      *      *
         *      *      *      *      *      *      *
 """
-num = int(input("Enter max num:\n"))
+num = int(input("Enter the size:\n"))

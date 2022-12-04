@@ -14,7 +14,7 @@ Hints: (ملاحظات)
 - print same line = الطباعة فى نفس السطر
 - end = implicit '\n' change to end =""
 """
-num = int(input("Enter max num:\n"))
+num = int(input("Enter the size:\n"))
 for i in range(1, num):
     for j in range(1, i + 1):
         print("*", end=" ")
