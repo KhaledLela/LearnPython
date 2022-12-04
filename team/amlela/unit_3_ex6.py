@@ -15,5 +15,3 @@ Hints: (ملاحظات)
 - end = implicit '\n' change to end =""
 
 """
-num = 5
-for i in range(1,num)
