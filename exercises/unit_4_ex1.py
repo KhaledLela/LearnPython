@@ -25,3 +25,13 @@ Constraints:
 -10ˆ9 <= target <= 10ˆ9
 Only one valid answer exists.
 """
+
+
+def twoSum(nums: [int], target: int) -> [int]:
+    for i in range(len(nums)):  # O(n) #4
+        for j in range(i + 1, len(nums)):  # O(n)
+            if nums[i] + nums[j] == target:  # O(1)
+                return [i, j]
+
+
+print(twoSum([2, 7, 11, 15], 9))
