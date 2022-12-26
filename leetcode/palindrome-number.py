@@ -21,15 +21,49 @@
 #
 # Follow up: Could you solve it without converting the integer to a string?
 
-def isPalindrome(x: int) -> bool:
-    if x < 0: return False
-    return x >= 0 and x == int(str(x)[::-1])
+# def isPalindrome(x: int) -> bool:
+#     return x >= 0 and x == int(str(x)[::-1])
 
 
 # Function to check Palindrome
+# 121
+# 121
+# 1234
+# 5 * 10
+# 50 + 4
+# 54321
+# / division return float  3/2 = 1.5, 4/2 = 2.0
+# // int division 3//2 = 1 & 4/2 = 2
+# % remainder division 3 % 2 = 1; 4 % 2 = 0
+#  / 10 = 2345
+# 0
+
+# 54320
+# 11345
+#  10 | 12345
+#   1 | 10
+#     | 1345
+#     | 10
+#     | 345
+#     | 45
+#     | 40
+#     | 5
+# print()
+
+# x = 12345 / 10 = 1234.5, 12345 // 10 = 1234
+# x_cut = 12345
+# r = 5
+
 def checkPalindrome(x):
     if x < 0 or (x % 10 == 0 and x != 0):
         return False
+    # reversed_num = 0
+    # x_cut = x
+    # while x_cut > 0:  # Exit condition 54321
+    #     reversed_num = reversed_num * 10 + x_cut % 10
+    #     x_cut //= 10  # x_cut = x_cut // 10 # Base condition
+    # return x == reversed_num
+
     reversed_num = 0
     while x > reversed_num:
         reversed_num = reversed_num * 10 + x % 10
