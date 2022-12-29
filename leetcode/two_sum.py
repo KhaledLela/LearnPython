@@ -32,8 +32,8 @@ Only one valid answer exists.
 
 # [11, 2, 7, 15]  target = nums[i] +
 def twoSum(nums: [int], target: int) -> [int]:
-    for i in range(len(nums)):  # O(n) x = 2
-        for j in range(i + 1, len(nums)):  # O(n) y =7
+    for i in range(len(nums)):  # O(n) nums[i] = 11
+        for j in range(i + 1, len(nums)):  # O(n) nums[j] = 7
             if nums[i] + nums[j] == target:  # O(1)
                 return [i, j]
 

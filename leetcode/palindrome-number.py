@@ -51,24 +51,91 @@
 # print()
 
 # x = 12345 / 10 = 1234.5, 12345 // 10 = 1234
+# 121
+# 010 != 0
+# -010
+# 0
+# 1
 # x_cut = 12345
 # r = 5
 
+# 1221
+# 0
 def checkPalindrome(x):
     if x < 0 or (x % 10 == 0 and x != 0):
         return False
-    # reversed_num = 0
-    # x_cut = x
-    # while x_cut > 0:  # Exit condition 54321
-    #     reversed_num = reversed_num * 10 + x_cut % 10
-    #     x_cut //= 10  # x_cut = x_cut // 10 # Base condition
+
+    # 1221
+    # 12
+    # 1   => %
+    # 122 => //
+
+    # 1 + 2 = 3
+    # 1 * 10 = 10 + 2 = 12
+    reversed_num = 0
+    # temp = x
+    # while temp > 0:  # Exit condition 1221
+        # 1
+        # 10 + 2 = 12
+        # r = 12
+        # 12 * 10 = 120 + 2 = 122
+        # r = 122
+        # 122 * 10 = 1220 + 1 = 1221
+        # 1221
+        # 1221 % 10 = 1
+        # r = 0 + 1 = 1
+
+        # 122 % 10 = 2
+        # r = 1 + 2 = 3
+        # r = 1, c = 2, o = 12
+        # r * 10 = 10  + 2 = 12
+
+        # r = 12
+        # temp = 12
+        # c = 12 % 10 = 2
+        # r + 2 = 14
+        # r * 10 = 120 + 2 = 122
+        # r * 10 = 1220 + 1 = 1221
+    #     reversed_num = reversed_num * 10 + temp % 10
+    #     temp //= 10  # x_cut = x_cut // 10 # Base condition
     # return x == reversed_num
 
-    reversed_num = 0
-    while x > reversed_num:
-        reversed_num = reversed_num * 10 + x % 10
+
+    # x = 1221
+    # t = 12
+    # r = 12
+
+    # x = 2002
+
+    # t = 20
+    # r = 20
+
+    # x = 2010
+    # False
+
+    # x = 1553
+    # t = 15
+    # r = 35
+
+    # x = 121
+
+    # x = 1
+    # r = 1
+    # False
+    # x = 12
+    # r = 122
+    # r //= 10 = 12
+
+    # 99
+    # 99
+    # 100
+
+    # 12221
+    r = 0
+    while x > r:
+        r = r * 10 + x % 10
         x //= 10
-    return reversed_num == x or x == reversed_num // 10
+    return r == x or x == r // 10
 
 
 num = int(input("Enter a number to check if palindrome:\n"))
