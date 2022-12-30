@@ -100,13 +100,11 @@ def checkPalindrome(x):
     #     temp //= 10  # x_cut = x_cut // 10 # Base condition
     # return x == reversed_num
 
-
     # x = 1221
     # t = 12
     # r = 12
 
     # x = 2002
-
     # t = 20
     # r = 20
 
@@ -122,6 +120,8 @@ def checkPalindrome(x):
     # x = 1
     # r = 1
     # False
+
+    # 12221
     # x = 12
     # r = 122
     # r //= 10 = 12
