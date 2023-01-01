@@ -17,32 +17,56 @@ C can be placed before D (500) and M (1000) to make 400 and 900.
 """
 
 
+# def romanToInt(s: str) -> int:
+#     cd = {
+#         'I': 1,
+#         'V': 5,
+#         'X': 10,
+#         'L': 50,
+#         'C': 100,
+#         'D': 500,
+#         'M': 1000,
+#         'IV': 4,
+#         'IX': 9,
+#         'XL': 40,
+#         'XC': 90,
+#         'CD': 400,
+#         'CM': 900,
+#     }
+#     ac = 0
+#     i = 0
+#     while i < len(s):
+#         if i + 1 < len(s) and s[i:i + 2] in cd:
+#             ac += cd[s[i:i + 2]]
+#             i += 2
+#         else:
+#             ac += cd[s[i]]
+#             i += 1
+#     return ac
+
+
+#
+#
+# Ran 1 test in 0.006s
 def romanToInt(s: str) -> int:
-        cd = {
-            'I': 1,
-            'V': 5,
-            'X': 10,
-            'L': 50,
-            'C': 100,
-            'D': 500,
-            'M': 1000,
-            'IV': 4,
-            'IX': 9,
-            'XL': 40,
-            'XC': 90,
-            'CD': 400,
-            'CM': 900,
-        }
-        ac = 0
-        i = 0
-        while i < len(s):
-            if i + 1 < len(s) and s[i:i + 2] in cd:
-                ac += cd[s[i:i + 2]]
-                i += 2
-            else:
-                ac += cd[s[i]]
-                i += 1
-        return ac
+    cd = {
+        'I': 1,
+        'V': 5,
+        'X': 10,
+        'L': 50,
+        'C': 100,
+        'D': 500,
+        'M': 1000
+    }
+    ac = 0
+    count = len(s)
+    for i in range(count):
+        cv = cd[s[i]]
+        if i + 1 < count and cv < cd[s[i + 1]]:
+            ac -= cv
+        else:
+            ac += cv
+    return ac
 
 
 class TestSol(TestCase):
