@@ -18,7 +18,13 @@ class ListNode:
 
 
 class Solution:
-    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
-        pass
+    def addTwoNumbers(self, l1: [], l2: []):
+        sum_nums = []
+        r = 0
+
+        for a, b in zip(l1, l2):
+            print('{} {}'.format(a, b))
 
 
+s = Solution()
+s.addTwoNumbers([3, 4, 5], [3, 4, 5, 6])
