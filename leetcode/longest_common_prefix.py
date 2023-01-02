@@ -21,8 +21,9 @@ Explanation: There is no common prefix among the input strings.
 from unittest import TestCase
 
 
-def longestCommonPrefix(self, strs: [str]) -> str:
-    pass
+class Solution:
+    def longestCommonPrefix(self, strs: [str]) -> str:
+        pass
 
 
 class TestSol(TestCase):
@@ -33,4 +34,4 @@ class TestSol(TestCase):
         # strs = ["dog", "racecar", "car"]
         # expected = ""
 
-        self.assertEqual(longestCommonPrefix(strs), expected)
+        self.assertEqual(Solution().longestCommonPrefix(strs), expected)
