@@ -1,5 +1,8 @@
 """
+1. Two Sum
 https://leetcode.com/problems/two-sum
+https://youtu.be/3nUkKzm2eW8
+https://github.com/KhaledLela/LearnPython/blob/main/leetcode/two_sum.py
 
 # Write a function takes list & target number
 # Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
