@@ -1,6 +1,10 @@
-# Given an integer x, return true if x is a
-# palindrome
-# , and false otherwise.
+"""
+9. Palindrome Number
+https://leetcode.com/problems/palindrome-number/
+https://youtu.be/skanHOHRI9g
+https://github.com/KhaledLela/LearnPython/blob/main/leetcode/palindrome_number.py
+"""
+# Given an integer x, return true if x is a palindrome, and false otherwise.
 #
 #
 # Example 1:
@@ -15,11 +19,6 @@
 # Input: x = 10
 # Output: false
 # Explanation: Reads 01 from right to left. Therefor it is not a palindrome.
-#
-# Constraints:
-# * -231 <= x <= 231 - 1
-#
-# Follow up: Could you solve it without converting the integer to a string?
 
 # def isPalindrome(x: int) -> bool:
 #     return x >= 0 and x == int(str(x)[::-1])
@@ -75,27 +74,27 @@ def checkPalindrome(x):
     reversed_num = 0
     # temp = x
     # while temp > 0:  # Exit condition 1221
-        # 1
-        # 10 + 2 = 12
-        # r = 12
-        # 12 * 10 = 120 + 2 = 122
-        # r = 122
-        # 122 * 10 = 1220 + 1 = 1221
-        # 1221
-        # 1221 % 10 = 1
-        # r = 0 + 1 = 1
+    # 1
+    # 10 + 2 = 12
+    # r = 12
+    # 12 * 10 = 120 + 2 = 122
+    # r = 122
+    # 122 * 10 = 1220 + 1 = 1221
+    # 1221
+    # 1221 % 10 = 1
+    # r = 0 + 1 = 1
 
-        # 122 % 10 = 2
-        # r = 1 + 2 = 3
-        # r = 1, c = 2, o = 12
-        # r * 10 = 10  + 2 = 12
+    # 122 % 10 = 2
+    # r = 1 + 2 = 3
+    # r = 1, c = 2, o = 12
+    # r * 10 = 10  + 2 = 12
 
-        # r = 12
-        # temp = 12
-        # c = 12 % 10 = 2
-        # r + 2 = 14
-        # r * 10 = 120 + 2 = 122
-        # r * 10 = 1220 + 1 = 1221
+    # r = 12
+    # temp = 12
+    # c = 12 % 10 = 2
+    # r + 2 = 14
+    # r * 10 = 120 + 2 = 122
+    # r * 10 = 1220 + 1 = 1221
     #     reversed_num = reversed_num * 10 + temp % 10
     #     temp //= 10  # x_cut = x_cut // 10 # Base condition
     # return x == reversed_num
