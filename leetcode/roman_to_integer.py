@@ -50,26 +50,58 @@ C can be placed before D (500) and M (1000) to make 400 and 900.
 
 #
 #
-# Ran 1 test in 0.006s
+# def romanToInt(s: str) -> int:
+#     cd = {
+#         'I': 1,
+#         'V': 5,
+#         'X': 10,
+#         'L': 50,
+#         'C': 100,
+#         'D': 500,
+#         'M': 1000
+#     }
+#     ac = 0
+#     count = len(s)
+#     for i in range(count):
+#         cv = cd[s[i]]
+#         if i + 1 < count and cv < cd[s[i + 1]]:
+#             ac -= cv
+#         else:
+#             ac += cv
+#     return ac
+
+
+# Chat GPT: Here is a solution in Python:
+# Explanation:
+#
+# We start by defining a dictionary that maps each Roman numeral to its corresponding integer value.
+# Then, we initialize a result variable to 0.
+# We iterate through the characters in the input string.
+# For each character, we check if it has a larger value than the previous character.
+# If it does, we subtract twice the value of the previous character to account for
+# the fact that it was added in the previous step and then subtracted in this step.
+# If the current character does not have a larger value than the previous character,
+# we simply add its value to the result.
+# At the end, we return the result.
+# This solution should run in O(n) time, where n is the length of the input string.
+
 def romanToInt(s: str) -> int:
-    cd = {
-        'I': 1,
-        'V': 5,
-        'X': 10,
-        'L': 50,
-        'C': 100,
-        'D': 500,
-        'M': 1000
+    roman_to_int = {
+        "I": 1,
+        "V": 5,
+        "X": 10,
+        "L": 50,
+        "C": 100,
+        "D": 500,
+        "M": 1000
     }
-    ac = 0
-    count = len(s)
-    for i in range(count):
-        cv = cd[s[i]]
-        if i + 1 < count and cv < cd[s[i + 1]]:
-            ac -= cv
+    result = 0
+    for i in range(len(s)):
+        if i > 0 and roman_to_int[s[i]] > roman_to_int[s[i - 1]]:
+            result += roman_to_int[s[i]] - 2 * roman_to_int[s[i - 1]]
         else:
-            ac += cv
-    return ac
+            result += roman_to_int[s[i]]
+    return result
 
 
 class TestSol(TestCase):
