@@ -1,6 +1,6 @@
 # https://docs.python.org/3/tutorial/controlflow.html#defining-functions
- a, b = b, a + b
-    print()
+#  a, b = b, a + b
+#     print()
 # def keyword to define the function.
 # variables inside func called local variables
 # store the value in the local symbol table

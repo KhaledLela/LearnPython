@@ -1,3 +1,3 @@
 """
-https://leetcode.com/problems/palindrome-number/
+https://www.py4e.com/html3/10-tuples
 """
