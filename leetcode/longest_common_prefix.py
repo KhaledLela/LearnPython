@@ -23,7 +23,19 @@ from unittest import TestCase
 
 class Solution:
     def longestCommonPrefix(self, strs: [str]) -> str:
-        pass
+        if not strs:
+            return ""
+        common_prefix = ""
+        word = strs[0]
+        for i in range(len(word)):
+            char = word[i]
+            for j in range(1, len(strs)):
+                cw = strs[j]
+                if len(cw) <= i or char != cw[i]:
+                    return common_prefix
+            common_prefix += char
+
+        return common_prefix
 
 
 class TestSol(TestCase):
