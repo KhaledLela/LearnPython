@@ -22,4 +22,4 @@ def longestCommonPrefix(strs:[str]) -> str:
             if strs[j][i] != current:
                 return lcp
         lcp += current
-    return lcp
+    return lcpcha
