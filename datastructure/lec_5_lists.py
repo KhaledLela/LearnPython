@@ -56,3 +56,10 @@ def delete_head(t):
 a = [1, 2, 3]
 delete_head(a)
 print(a)
+
+# a = 3 #
+# b = a
+#
+# print(b is a)  # True
+# a = 5
+# print(b)  # 3 | 5 ? => 3

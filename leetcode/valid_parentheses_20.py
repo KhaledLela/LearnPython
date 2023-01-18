@@ -35,26 +35,21 @@ from unittest import TestCase
 
 class Solution:
 
-    # def isValid(self, s: str) -> bool:
-    #     if s is None or len(s) == 0 or len(s) % 2 != 0: return False
-    #     parentheses = ('()', '[]', '{}')
-    #     closed = (')', ']', '}')
-    #     parts = []
-    #     # nested = False
-    #     for i in range(len(s)):
-    #         char = s[i]
-    #         # if nested and char not in closed: return False
-    #         if char in closed and len(parts) == 0: return False
-    #         if char in closed:
-    #             pair = parts.pop() + char
-    #             if pair not in parentheses: return False
-    #             # nested = len(parts) != 0
-    #         else:
-    #             parts.append(char)
-    #
-    #     return not parts
-
     def isValid(self, s: str) -> bool:
+        #     if s is None or len(s) == 0 or len(s) % 2 != 0: return False
+        #     parentheses = ('()', '[]', '{}')
+        #     closed = (')', ']', '}')
+        #     parts = []
+        #     for char in s:
+        #         # if nested and char not in closed: return False
+        #         if char in closed and len(parts) == 0: return False
+        #         if char in closed:
+        #             pair = parts.pop() + char
+        #             if pair not in parentheses: return False
+        #         else:
+        #             parts.append(char)
+        #     return not parts
+
         if s is None or len(s) == 0 or len(s) % 2 != 0: return False
         brackets = {"(": ")", "[": "]", "{": "}"}
         stack = []
