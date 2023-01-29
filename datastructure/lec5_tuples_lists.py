@@ -25,7 +25,7 @@ def get_data(aTuple):
     aTuple, tuple of tuples (int, string)
     Extracts all integers from aTuple and sets
     them as elements in a new tuple.
-    Extracts all unique strings from from aTuple
+    Extracts all unique strings from aTuple
     and sets them as elements in a new tuple.
     Returns a tuple of the minimum integer, the
     maximum integer, and the number of unique strings
