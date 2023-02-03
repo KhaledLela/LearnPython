@@ -15,8 +15,8 @@ https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programm
 #        print("There is an i or u")
 
 
-####################
-## EXAMPLE: while loops and strings
+###################
+## EXAMPLE: whilloops and strings
 ## CHALLENGE: rewrite while loop with a for loop
 ####################
 # an_letters = "aefhilmnorsxAEFHILMNORSX"
