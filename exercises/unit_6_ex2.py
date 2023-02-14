@@ -1,8 +1,7 @@
 #####################################
-# EXAMPLE:  fibonacci using recursion
+# EXAMPLE:  palindrome using recursion
+# Base case
+# recursive condition.
 #####################################
 
 def isPalindrome(s):
-    # Base case
-
-    # recursive condition.
