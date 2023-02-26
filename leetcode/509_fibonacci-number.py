@@ -26,3 +26,36 @@ Output: 3
 Explanation: F(4) = F(3) + F(2) = 2 + 1 = 3.
 
 """
+
+from unittest import TestCase
+
+
+class Solution:
+    d = {1: 1, 2: 2}
+
+    def fib(self, n):
+        if n == 1:
+            return 1
+        elif n == 2:
+            return 2
+        else:
+            return self.fib(n - 1) + self.fib(n - 2)
+
+    def fib_efficient(self, n):
+        d = self.d
+        if n in d:
+            return d[n]
+        else:
+            ans = self.fib_efficient(n - 1) + self.fib_efficient(n - 2)
+            d[n] = ans
+            return ans
+
+
+class TestSol(TestCase):
+    def test_fib(self):
+        # Ran 1 test in 1.592s
+        self.assertEqual(Solution().fib(34), 9227465)
+
+    def test_fib_efficient(self):
+        # Ran 1 test in 0.002s
+        self.assertEqual(Solution().fib_efficient(34), 9227465)
