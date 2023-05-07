@@ -9,6 +9,8 @@
 
 # print(dir(stuff))
 class Animal:
+    pass
+
 
 class PartyAnimal(Animal):
     x = 0
@@ -25,10 +27,10 @@ class PartyAnimal(Animal):
 
 
 an = PartyAnimal(3,4)
-# an.party()
-# an.party()
-# an.party()
-# PartyAnimal.party(an)  # print ???
-# # PartyAnimal.party() #??
-# an2 = PartyAnimal()
-# an2.party()
+an.party()
+# # an.party()
+# # an.party()
+# # PartyAnimal.party(an)  # print ???
+# # # PartyAnimal.party() #??
+# # an2 = PartyAnimal()
+# # an2.party()
