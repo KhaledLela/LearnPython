@@ -1,4 +1,5 @@
 """
+https://github.com/openai/whisper
 # How to make a virtual python env for your project.
 > python -m venv venv
 >
