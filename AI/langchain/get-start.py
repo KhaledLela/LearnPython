@@ -27,17 +27,15 @@ from dotenv import load_dotenv
 import os
 
 from langchain.document_loaders import UnstructuredFileLoader
-from langchain.chains.summarize import load_summarize_chain
 from langchain import OpenAI
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.docstore.document import Document
-from langchain.text_splitter import CharacterTextSplitter
 from langchain.chains.summarize import load_summarize_chain
 
 # Load environment variables from .env file
 load_dotenv()
 os.environ["OPENAI_API_KEY"] = os.getenv('OPENAI_API_KEY')
 
+source = os.getenv('SOURCE')
 
 llm = OpenAI(temperature=0.9)
 
