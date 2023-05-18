@@ -1,22 +1,20 @@
 """
 Write a program ask user for
 input a list of a comma separated numbers
-1 2 3 4 55 66
-1,2,3,4,55,66
+Then go through each element to calculate max & min
+2,3,10,0,-1,-8
 """
+
 s = input('Enter a list of a comma separated nums:\n')
-str_nums = s.split(',')
-print(str_nums)
-# nums = []
-# for i in range(len(str_nums)):
-#     print(i)
-#     nums.append(int(str_nums[i]))
-# print(nums)
+nums = list(map(int, s.split()))
 
-# for n in str_nums:
-#     nums.append(int(n))
-# print(nums)
+max = None
+min = None
+for x in nums:
+    if max is None or max < x:
+        max = x
+    if min is None or min > x:
+        min = x
 
-nums = list(map(int, str_nums))
-# nums = list(map(float,str_nums))
-print(nums)
+print("Max is", max)
+print("Min is", min)
