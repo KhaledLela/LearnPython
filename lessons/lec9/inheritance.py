@@ -14,6 +14,7 @@ class Animal:
 # 2. The child class:
 
 class Dog(Animal):
+    # pass
     def speak(self):
         print(f"{self.name} barks.")
 
