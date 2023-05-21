@@ -1,0 +1,18 @@
+{
+  "title": "Quiz Headline",
+  "bullets": "Quiz summary",
+  "language_id": "Id Integer from language ids",
+  "questions": [
+    {
+      "title": "Question title",
+      "question_type_value": "radio|checkbox",
+      "points": "Question points",
+      "alternatives": [
+        {
+          "title": "alternative title",
+          "correct": "Integer answer = 1 and otherwise = 0"
+        }
+      ]
+    }
+  ]
+}
