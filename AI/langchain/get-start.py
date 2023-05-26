@@ -45,7 +45,7 @@ document = loader.load()
 char_text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=0)
 docs = char_text_splitter.split_documents(document)
 
-model = load_summarize_chain(llm=llm, chain_type="refine")
+model = load_summarize_chain(llm=llm, chain_type="refine", verbose=True)
 model.run(docs)
 
 print(len(docs))

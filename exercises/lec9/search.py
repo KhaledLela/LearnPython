@@ -48,19 +48,28 @@ results = {}
 
 
 # Search for the keyword in the JSON file
-def search_keyword(keyword):
+def search_keyword():
     count = 0
     # for key, value in summary.items():
     for value in summary.values():
-        # value = summary[key]
-        # print(value)
-        # break
-        # items = summary[key]
-        for lines in value:
-            if keyword in lines:
-                count += 1
+        # check if value is array or str
+        if isinstance(value, str):
+            count += make_count(value)
+        else:
+            for text in value:
+                count += make_count(text)
     print(f"{keyword}:{count}")
     results[keyword] = count
+
+
+def make_count(text):
+    count = 0
+    for word in text.split(' '):
+        # if keyword == word: # Google != Google's
+        # if word.__contains__(keyword):
+        if keyword in word:
+            count += 1
+    return count
 
 
 # Ask the user to input the search keyword
@@ -68,7 +77,19 @@ while True:
     keyword = input("Enter search keyword:\n")
     if keyword == "#":
         break
-    search_keyword(keyword)
+    search_keyword()
+
+
+def save_results():
+    try:
+        with open("result.txt", "a") as file:
+            # file.write(results)  # save results error occurred
+            # file.write(str(results))
+            file.write(f"\n{results}\n")
+    except Exception as ex:
+        print(f"Something went wrong: {ex}")
+
 
 # Save the result into result.txt
+save_results()
 print(results)

@@ -1,5 +1,4 @@
 import json
-
 from langchain.output_parsers import PydanticOutputParser
 from langchain.prompts import (ChatPromptTemplate,
                                HumanMessagePromptTemplate,
@@ -19,33 +18,35 @@ def quiz_structure():
 
 def quiz_chat_prompt():
     return ChatPromptTemplate.from_messages([
-        SystemMessagePromptTemplate.from_template("You are a helpful assistant that make Quiz."),
+        SystemMessagePromptTemplate.from_template(
+            "You are a helpful assistant that make Quiz."),
         SystemMessage(content=f"Language ids: {language_structure()}"),
-        SystemMessage(content=f"Quiz has the following JSON structure {quiz_structure()}"),
+        SystemMessage(
+            content=f"Quiz has the following JSON structure {quiz_structure()}"),
         SystemMessagePromptTemplate.from_template(
             "Quiz has {question_count} multiple-choice questions, "
             "with each question having {alternative_count} options."),
-        SystemMessagePromptTemplate.from_template("Quiz aiming for {difficulty_level}"),
+        SystemMessagePromptTemplate.from_template(
+            "Quiz aiming for {difficulty_level}"),
         HumanMessagePromptTemplate.from_template("""Write a quiz from the following:
-    
+
         {text}
-        
+
         QUIZ IN {language} ONE line double quotes JSON without explanation: """)
     ])
 
 
 def quiz_pydantic_prompt(parser: PydanticOutputParser):
     return ChatPromptTemplate.from_messages([
-        SystemMessagePromptTemplate.from_template("You are a helpful assistant that make Quiz."),
-        SystemMessage(content=f"Language ids: {language_structure()}"),
-        SystemMessage(content=parser.get_format_instructions()),
         SystemMessagePromptTemplate.from_template(
-            "Quiz has {question_count} multiple-choice questions, "
-            "each question has {alternative_count} options."),
-        SystemMessagePromptTemplate.from_template("Quiz aiming for {difficulty_level}"),
-        HumanMessagePromptTemplate.from_template("""Write a quiz from the following:
-    
+            "Your helpful assistant for creating quizzes from concise summaries. tailored to {difficulty_level}"),
+        SystemMessage(content=f"Language ids: {language_structure()}"),
+        SystemMessagePromptTemplate.from_template(
+            "Quiz question has {alternative_count} options."),
+        SystemMessage(content=parser.get_format_instructions()),
+        HumanMessagePromptTemplate.from_template("""Generate a multiple-choice quiz with {question_count} questions using the following:
+
         {text}
-        
+
         QUIZ IN {language}:""")
     ])

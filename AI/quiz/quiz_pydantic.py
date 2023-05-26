@@ -1,11 +1,13 @@
 from typing import List
 
-from pydantic import BaseModel, Field, constr, conint, PositiveInt
+from pydantic import BaseModel, Field, constr, conint
+from pydantic.types import PositiveInt
 
 
 class Alternative(BaseModel):
     title: str
     correct: conint(ge=0, le=1)
+    points: conint(ge=0)
 
 
 class Question(BaseModel):
@@ -19,15 +21,4 @@ class Quiz(BaseModel):
     title: str = Field(description="quiz title")
     bullets: str = Field(description="quiz summary")
     language_id: int
-    question_count: conint(ge=1)
-    alternative_count: conint(ge=1)
     questions: List[Question]
-
-    @staticmethod
-    def __constrains__(v):
-        if len(v.questions) != v.question_count:
-            raise ValueError(f"Quiz must have exactly {v.question_count} questions.")
-        for question in v.questions:
-            if len(question.alternatives) != v.alternative_count:
-                raise ValueError(f"Each question must have exactly {v.alternative_count} alternatives.")
-        return v

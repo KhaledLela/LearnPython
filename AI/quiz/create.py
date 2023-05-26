@@ -6,7 +6,7 @@ from langchain import LLMChain
 from langchain.chat_models import ChatOpenAI
 from langchain.output_parsers import PydanticOutputParser
 
-from LearnPython.AI.quiz.quiz_pydantic import Quiz
+from quiz_pydantic import Quiz
 from quiz_prompt_template import quiz_pydantic_prompt
 
 
@@ -32,13 +32,15 @@ def make_quiz(summary):
     parser = PydanticOutputParser(pydantic_object=Quiz)
     prompt = quiz_pydantic_prompt(parser)
     chain = LLMChain(llm=llm, verbose=True, prompt=prompt)
-    output = chain.run({
+
+    config = {
         "text": summary,
         "language": 'Arabic',
         "question_count": 5,
         "alternative_count": 4,
         "difficulty_level": map_difficulty_level(3)
-    })
+    }
+    output = chain.run(config)
     return parser.parse(output).json()
 
 
