@@ -42,14 +42,18 @@ def load_summary():
         print(f"Something went wrong: {ex}")
 
 
-summary = load_summary()
+summary = load_summary()  # dic {key:value}
 # print(summary)
 results = {}
 
 
 # Search for the keyword in the JSON file
+# list [3,'ahmed',true]
+# {}
+# Tuple ()
 def search_keyword():
     count = 0
+    # for key in summary:
     # for key, value in summary.items():
     for value in summary.values():
         # check if value is array or str
@@ -62,9 +66,11 @@ def search_keyword():
     results[keyword] = count
 
 
-def make_count(text):
+#
+#
+def make_count(text: str):
     count = 0
-    for word in text.split(' '):
+    for word in text.split():
         # if keyword == word: # Google != Google's
         # if word.__contains__(keyword):
         if keyword in word:

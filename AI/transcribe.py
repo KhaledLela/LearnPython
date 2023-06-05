@@ -32,6 +32,7 @@ print(result["text"])
 # decode the audio
 # options = whisper.DecodingOptions()
 # result = whisper.decode(model, mel, options)
+
 # model = whisper.load_model("medium")
 # result = model.transcribe(audio, fp16=False)
 

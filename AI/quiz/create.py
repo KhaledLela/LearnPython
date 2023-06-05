@@ -35,7 +35,7 @@ def make_quiz(summary):
 
     config = {
         "text": summary,
-        "language": 'Arabic',
+        "language": 'English',
         "question_count": 5,
         "alternative_count": 4,
         "difficulty_level": map_difficulty_level(3)

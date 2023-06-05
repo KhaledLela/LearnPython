@@ -5,3 +5,5 @@
 {'event': 11, 'PaLM': 23, 'Bard': 11}
 
 {'summary': 10, 'announced': 9}
+
+{'Google': 107, '': 3621, 'Sundar': 7, 'pichai': 0, 'Pichai': 13}
