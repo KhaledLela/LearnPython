@@ -12,8 +12,8 @@ import whisper
 
 # ['tiny.en', 'tiny', 'base.en', 'base', 'small.en', 'small', 'medium.en', 'medium', 'large-v1', 'large-v2', 'large']
 # print(whisper.available_models())
-model = whisper.load_model("base")
-result = model.transcribe("/Users/khaledlela/Downloads/audio.mp3", fp16=False)
+model = whisper.load_model("medium")
+result = model.transcribe("/Users/khaledlela/Downloads/14.mp3", fp16=False)
 print(result["text"])
 
 # model = whisper.load_model("medium")
