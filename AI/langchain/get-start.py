@@ -39,7 +39,7 @@ source = os.getenv('SOURCE')
 
 llm = OpenAI(temperature=0.9)
 
-loader = UnstructuredFileLoader("/Users/khaledlela/Downloads/test.json")
+loader = UnstructuredFileLoader("/Users/khaledlela/Downloads/test.txt")
 document = loader.load()
 
 char_text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=0)
