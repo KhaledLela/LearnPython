@@ -15,24 +15,16 @@ os.environ["OPENAI_API_KEY"] = os.getenv('OPENAI_API_KEY')
 
 def lambda_handler():
     action_type = 'prompt'
-    prompt = 'add more 3?'
-    source = """
-    References of exercises for lumbar spine
-
-    Here are some references for exercises that can help with lumbar spine issues:
-Lumbar Spine Stabilization Exercises
-Lower Back Exercises and Stretches
-Core Exercises for Lower Back Pain
-Exercises for Lower Back Pain: 15 Best Moves
-4 exercises to help your back pain
-    """
+    prompt = 'List of top programming books'
+#     source = """
+# {\"title\":\"\\u0645\\u0631\\u0627\\u062c\\u0639 \\u0644\\u062a\\u0645\\u0627\\u0631\\u064a\\u0646 \\u0627\\u0644\\u0638\\u0647\\u0631 \\u0627\\u0644\\u0633\\u0641\\u0644\\u064a\",\"name\":\"\\n\\n<p>\\u0641\\u064a\\u0645\\u0627 \\u064a\\u0644\\u064a \\u0628\\u0639\\u0636 \\u0627\\u0644\\u0645\\u0631\\u0627\\u062c\\u0639 \\u0644\\u062a\\u0645\\u0627\\u0631\\u064a\\u0646 \\u064a\\u0645\\u0643\\u0646 \\u0623\\u0646 \\u062a\\u0633\\u0627\\u0639\\u062f \\u0641\\u064a \\u0645\\u0634\\u0627\\u0643\\u0644 \\u0627\\u0644\\u0638\\u0647\\u0631 \\u0627\\u0644\\u0633\\u0641\\u0644\\u064a:<\\\/p>\\n\\n<ul>\\n  <li><a href=\\\"https:\\\/\\\/www.spine-health.com\\\/wellness\\\/exercise\\\/lumbar-spine-stabilization-exercises\\\">\\u062a\\u0645\\u0627\\u0631\\u064a\\u0646 \\u0644\\u062b\\u0628\\u0627\\u062a \\u0627\\u0644\\u0638\\u0647\\u0631 \\u0627\\u0644\\u0633\\u0641\\u0644\\u064a<\\\/a><\\\/li>\\n  <li><a href=\\\"https:\\\/\\\/www.healthline.com\\\/health\\\/fitness-exercise\\\/lower-back-exercises#lower-back-stretches\\\">\\u062a\\u0645\\u0627\\u0631\\u064a\\u0646 \\u0648\\u062a\\u0645\\u0627\\u0631\\u064a\\u0646 \\u062a\\u0645\\u062f\\u062f \\u0644\\u0644\\u0638\\u0647\\u0631 \\u0627\\u0644\\u0633\\u0641\\u0644\\u064a<\\\/a><\\\/li>\\n  <li><a href=\\\"https:\\\/\\\/www.verywellhealth.com\\\/core-exercises-for-lower-back-pain-2696430\\\">\\u062a\\u0645\\u0627\\u0631\\u064a\\u0646 \\u0627\\u0644\\u0646\\u0648\\u0627\\u0629 \\u0644\\u0623\\u0644\\u0645 \\u0627\\u0644\\u0638\\u0647\\u0631 \\u0627\\u0644\\u0633\\u0641\\u0644\\u064a<\\\/a><\\\/li>\\n  <li><a href=\\\"https:\\\/\\\/www.medicalnewstoday.com\\\/articles\\\/323204#exercises-for-lower-back-pain\\\">\\u062a\\u0645\\u0627\\u0631\\u064a\\u0646 \\u0644\\u0623\\u0644\\u0645 \\u0627\\u0644\\u0638\\u0647\\u0631 \\u0627\\u0644\\u0633\\u0641\\u0644\\u064a: 15 \\u0623\\u0641\\u0636\\u0644 \\u062d\\u0631\\u0643\\u0629<\\\/a><\\\/li>\\n  <li><a href=\\\"https:\\\/\\\/www.health.harvard.edu\\\/pain\\\/4-exercises-to-help-your-back-pain\\\">\\u0623\\u0631\\u0628\\u0639\\u0629 \\u062a\\u0645\\u0627\\u0631\\u064a\\u0646 \\u0644\\u0645\\u0633\\u0627\\u0639\\u062f\\u0629 \\u0641\\u064a \\u0623\\u0644\\u0645 \\u0627\\u0644\\u0638\\u0647\\u0631 \\u0627\\u0644\\u062e\\u0627\\u0635 \\u0628\\u0643<\\\/a><\\\/li>\\n<\\\/ul>\"}    """
     source_language = 'English'
     output_language = 'Arabic'
 
     params = {
         'action_type': action_type,
         'prompt': prompt,
-        'source': source,
+        'source': '',
         'source_language': source_language,
         'output_language': output_language
     }
