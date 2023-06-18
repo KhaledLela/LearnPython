@@ -15,10 +15,12 @@ os.environ["OPENAI_API_KEY"] = os.getenv('OPENAI_API_KEY')
 
 def lambda_handler():
     action_type = 'prompt'
-    prompt = 'Give me other 3 books'
+    prompt = 'Explain more'
     source = """
 {\"title\":\"Code Complete\",\"name\":\"Code Complete is a comprehensive guide to software construction that covers the entire development process from planning to testing to documentation. It provides practical advice and best practices for writing high-quality code that is easy to maintain, understand, and modify. The book is full of examples, tips, and real-world case studies that illustrate the concepts and techniques described in the text. Code Complete is considered a must-read for any programmer who wants to improve their coding skills and become a more effective software developer.\"}"
     """
+
+    # source =''
     source_language = 'English'
     output_language = 'Arabic'
 

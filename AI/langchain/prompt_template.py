@@ -18,14 +18,6 @@ def chain_map_reduce_template():
     return {"chain_type": "map_reduce", "map_prompt": prompt, "combine_prompt": prompt}
 
 
-def chat_map_reduce_prompt():
-    system_message_prompt = SystemMessagePromptTemplate.from_template("Your job is to produce a final summary.")
-    assistent_message_prompt = Ass.from_template("Write a concise summary in {language}:")
-    human_message_prompt = HumanMessagePromptTemplate.from_template("Write a concise summary in {language}:")
-    prompt = ChatPromptTemplate.from_messages([system_message_prompt, human_message_prompt])
-    return {"chain_type": "map_reduce", "map_prompt": prompt, "combine_prompt": prompt}
-
-
 def chain_refine_template():
     prompt_template = """Write a concise summary of the following:
 

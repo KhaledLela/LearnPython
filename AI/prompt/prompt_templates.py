@@ -16,8 +16,11 @@ def item_create_prompt(parser: PydanticOutputParser):
             "You are a helpful assistant that generate relevant Item"),
         SystemMessage(content=f"Language ids: {language_structure()}"),
         SystemMessage(content=parser.get_format_instructions()),
-        HumanMessagePromptTemplate.from_template(
-            "Your job is to provide a final Item from the given prompt: {prompt}")
+        HumanMessagePromptTemplate.from_template("""Your job is to provide a final [Item] from the given prompt: 
+
+        {prompt}
+
+        Your response [Item] should follow the output schema.""")
     ])
 
 
@@ -27,27 +30,27 @@ def item_follow_up_prompt(parser: PydanticOutputParser):
             "You are a helpful assistant that follows up with a relevant completion Item from a given Item"),
         SystemMessage(content=f"Language ids: {language_structure()}"),
         SystemMessage(content=parser.get_format_instructions()),
-        HumanMessagePromptTemplate.from_template("""Your job is to produce a final [Item] using the given following Item to answer the question:
-        
+        HumanMessagePromptTemplate.from_template("""Given following Item to answer the question:
+
         Item: {source}
-        
+
         Question: {prompt}
-        
-        [Item] should follows the output schema.""")
+
+        Your response [Item] should follow the output schema.""")
     ])
 
 
 def item_regenerate_prompt(parser: PydanticOutputParser):
     return ChatPromptTemplate.from_messages([
         SystemMessagePromptTemplate.from_template(
-            "You are a helpful assistant that regenerates relevant completion Item from source"),
+            "You are a helpful assistant that regenerates provided content"),
         SystemMessage(content=f"Language ids: {language_structure()}"),
         SystemMessage(content=parser.get_format_instructions()),
-        HumanMessagePromptTemplate.from_template("""Your job is to regenerate a final [Item] from the given content provided below:
+        HumanMessagePromptTemplate.from_template("""Your job is to regenerate from the given Item provided below:
 
-        {source}
+        Item: {source}
 
-        [Item] should follows the output schema.""")
+        Your response [Item] should follow the output schema.""")
     ])
 
 
@@ -62,7 +65,7 @@ def item_translate_prompt(parser: PydanticOutputParser):
 
         {source}
 
-        [Item] should follows the output schema.""")
+        Your response [Item] should follow the output schema.""")
     ])
 
 
@@ -75,5 +78,6 @@ def item_title_prompt(parser: PydanticOutputParser):
         HumanMessagePromptTemplate.from_template("""Your job is to produce a final [Item] from the following:
 
         {source}
-        """)
+
+        Your response [Item] should follow the output schema.""")
     ])
