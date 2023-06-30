@@ -21,5 +21,5 @@ class Quiz(BaseModel):
     bullets: str = Field(description="quiz summary")
     language_id: int
     tag_names: List[str]
-    # media_url: str = Field(description="quiz cover URL")
+    image_prompt: str = Field(description="A prompt for generating a relevant quiz image.")
     questions: List[Question]

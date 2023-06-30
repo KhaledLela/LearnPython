@@ -15,9 +15,9 @@ os.environ["OPENAI_API_KEY"] = os.getenv('OPENAI_API_KEY')
 
 def lambda_handler():
     action_type = 'prompt'
-    prompt = 'Explain more'
+    prompt = 'More please'
     source = """
-{\"title\":\"Code Complete\",\"name\":\"Code Complete is a comprehensive guide to software construction that covers the entire development process from planning to testing to documentation. It provides practical advice and best practices for writing high-quality code that is easy to maintain, understand, and modify. The book is full of examples, tips, and real-world case studies that illustrate the concepts and techniques described in the text. Code Complete is considered a must-read for any programmer who wants to improve their coding skills and become a more effective software developer.\"}"
+{\"name\":\"Easter Island, also known as Rapa Nui, is a remote island located in the southeastern Pacific Ocean. It is famous for its giant stone statues called mai and its mysterious history.\"}"
     """
 
     # source =''
@@ -50,7 +50,11 @@ def create_item(params):
     prompt_template = map_prompt(parser, params)
     chain = LLMChain(llm=llm, verbose=True, prompt=prompt_template)
     result = chain.run(params)
-    return parser.parse(result).json()
+    try:
+        return parser.parse(result).json()
+    except Exception as ex:
+        print(ex)
+        return {'name': result}
 
     # token_usage = result.llm_output['token_usage']
     # output = result.generations[0][0].text

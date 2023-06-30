@@ -47,19 +47,19 @@ import re
 #
 name = 'name'
 def read_file():
-     with open('mbox-short.txt') as txt:
+     with open('quran_links.txt') as txt:
         s = txt.read()
         return s
-def find(name):
-    if re.search(f'"{name}": ', s):
-        lst = re.search(f'"{name}": "([^"]+)"', s)
-        print(lst)
-        print(lst.group(1))
+def find():
+    # if re.search(f'"{name}": ', s):
+    lst = re.findall(f'^https://\\S+\\.mp3', s)
+    print(lst)
+    # print(lst.group(1))
 
-    else:
-        print('false')   
+    # else:
+    #     print('false')
 s = read_file()
-find(name)
+find()
 
 
 

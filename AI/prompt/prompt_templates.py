@@ -16,27 +16,27 @@ def item_create_prompt(parser: PydanticOutputParser):
             "You are a helpful assistant that generate relevant Item"),
         SystemMessage(content=f"Language ids: {language_structure()}"),
         SystemMessage(content=parser.get_format_instructions()),
-        HumanMessagePromptTemplate.from_template("""Your job is to provide a final [Item] from the given prompt: 
+        HumanMessagePromptTemplate.from_template("""Your job is to provide a final item from the following given prompt: 
 
-        {prompt}
+        Prompt: {prompt}
 
-        Your response [Item] should follow the output schema.""")
+        Please provide a response item that follows the output schema in the prompt language.""")
     ])
 
 
 def item_follow_up_prompt(parser: PydanticOutputParser):
     return ChatPromptTemplate.from_messages([
         SystemMessagePromptTemplate.from_template(
-            "You are a helpful assistant that follows up with a relevant completion Item from a given Item"),
+            "You are a helpful assistant that provide a relevant Item that follows up from a given Item."),
         SystemMessage(content=f"Language ids: {language_structure()}"),
         SystemMessage(content=parser.get_format_instructions()),
-        HumanMessagePromptTemplate.from_template("""Given following Item to answer the question:
+        HumanMessagePromptTemplate.from_template("""Given the following item and question:
 
         Item: {source}
 
         Question: {prompt}
 
-        Your response [Item] should follow the output schema.""")
+        Please provide a response item that follows the output schema and continues after the given item.""")
     ])
 
 
@@ -50,14 +50,14 @@ def item_regenerate_prompt(parser: PydanticOutputParser):
 
         Item: {source}
 
-        Your response [Item] should follow the output schema.""")
+        Please provide a response item that follows the output schema.""")
     ])
 
 
 def item_translate_prompt(parser: PydanticOutputParser):
     return ChatPromptTemplate.from_messages([
         SystemMessagePromptTemplate.from_template(
-            "You are a helpful assistant that translates {source_language} to {output_language}"),
+            "You are a helpful assistant that translates {source_language} Item into {output_language}"),
         SystemMessage(content=f"Language ids: {language_structure()}"),
         SystemMessage(content=parser.get_format_instructions()),
         HumanMessagePromptTemplate.from_template("""Your job is to produce a final [Item]
@@ -65,7 +65,7 @@ def item_translate_prompt(parser: PydanticOutputParser):
 
         {source}
 
-        Your response [Item] should follow the output schema.""")
+        Please provide a response item that follows the output schema.""")
     ])
 
 
@@ -79,5 +79,5 @@ def item_title_prompt(parser: PydanticOutputParser):
 
         {source}
 
-        Your response [Item] should follow the output schema.""")
+        Please provide a response item that follows the output schema.""")
     ])
