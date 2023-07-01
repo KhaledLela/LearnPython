@@ -27,16 +27,16 @@ def item_create_prompt(parser: PydanticOutputParser):
 def item_follow_up_prompt(parser: PydanticOutputParser):
     return ChatPromptTemplate.from_messages([
         SystemMessagePromptTemplate.from_template(
-            "You are a helpful assistant that provide a relevant Item that follows up from a given Item."),
+            "You are a helpful assistant that provide a relevant item that follows up from a given item."),
         SystemMessage(content=f"Language ids: {language_structure()}"),
         SystemMessage(content=parser.get_format_instructions()),
-        HumanMessagePromptTemplate.from_template("""Given the following item and question:
+        HumanMessagePromptTemplate.from_template("""Your job is to provide a final item by using the following context to answer the question with a new comprehensive information without repeating the given context: 
 
         Item: {source}
 
         Question: {prompt}
 
-        Please provide a response item that follows the output schema and continues after the given item.""")
+        Please provide a response item that follows the output schema.""")
     ])
 
 
