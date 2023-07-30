@@ -45,21 +45,21 @@ import re
 
 
 #
-name = 'name'
-def read_file():
-     with open('quran_links.txt') as txt:
-        s = txt.read()
-        return s
-def find():
-    # if re.search(f'"{name}": ', s):
-    lst = re.findall(f'^https://\\S+\\.mp3', s)
-    print(lst)
-    # print(lst.group(1))
-
-    # else:
-    #     print('false')
-s = read_file()
-find()
+# name = 'name'
+# def read_file():
+#      with open('quran_links.txt') as txt:
+#         s = txt.read()
+#         return s
+# def find():
+#     # if re.search(f'"{name}": ', s):
+#     lst = re.findall(f'^https://\\S+\\.mp3', s)
+#     print(lst)
+#     # print(lst.group(1))
+#
+#     # else:
+#     #     print('false')
+# s = read_file()
+# find()
 
 
 
@@ -91,3 +91,14 @@ find()
 #     x = re.findall('^X\S*: ([0-9.]+)', line)
 #     if len(x) > 0:
 #         print(x)
+
+
+
+def extract_youtube_id(url):
+    pattern = re.compile(
+        r'(?:youtube.com/(?:watch?.*?v=|embed/|v/|u/\w/|shorts/)|youtu.be/|youtube.com/live/)([\w-]+)')
+    match = pattern.search(url)
+    if match:
+        return match.group(1)
+    else:
+        return None

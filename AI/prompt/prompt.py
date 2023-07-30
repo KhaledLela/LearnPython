@@ -14,23 +14,8 @@ os.environ["OPENAI_API_KEY"] = os.getenv('OPENAI_API_KEY')
 
 
 def lambda_handler():
-    action_type = 'prompt'
-    prompt = 'More please'
-    source = """
-{\"name\":\"Easter Island, also known as Rapa Nui, is a remote island located in the southeastern Pacific Ocean. It is famous for its giant stone statues called mai and its mysterious history.\"}"
-    """
-
-    # source =''
-    source_language = 'English'
-    output_language = 'Arabic'
-
-    params = {
-        'action_type': action_type,
-        'prompt': prompt,
-        'source': source,
-        'source_language': source_language,
-        'output_language': output_language
-    }
+    params = {"action_type": "prompt", "prompt": "add more 5",
+              "source": "{\"text\":\"<ol>\\n<li>The Great Pyramids of Giza<\\\/li>\\n<li>The Sphinx<\\\/li>\\n<li>The Egyptian Museum<\\\/li>\\n<li>Karnak Temple Complex<\\\/li>\\n<li>Valley of the Kings<\\\/li>\\n<li>Ancient City of Luxor<\\\/li>\\n<li>Abu Simbel<\\\/li>\\n<li>White Desert<\\\/li>\\n<li>Mount Sinai<\\\/li>\\n<li>Alexandria<\\\/li>\\n<\\\/ol>\"}"}
     item: dict = create_item(params)
 
     response = json.dumps(item)

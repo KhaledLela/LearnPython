@@ -27,23 +27,24 @@ from dotenv import load_dotenv
 import os
 
 from langchain.document_loaders import UnstructuredFileLoader
-from langchain import OpenAI
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain.chat_models import ChatOpenAI
+from langchain.docstore.document import Document
+from langchain.text_splitter import CharacterTextSplitter
 from langchain.chains.summarize import load_summarize_chain
 
 # Load environment variables from .env file
 load_dotenv()
 os.environ["OPENAI_API_KEY"] = os.getenv('OPENAI_API_KEY')
 
-source = os.getenv('SOURCE')
+llm = ChatOpenAI(model_name='gpt-4', temperature=0.9)
 
-llm = OpenAI(temperature=0.9)
+with open('/Users/khaledlela/Downloads/test.txt') as file:
+    source = file.read()
 
-loader = UnstructuredFileLoader("/Users/khaledlela/Downloads/test.txt")
-document = loader.load()
-
-char_text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=0)
-docs = char_text_splitter.split_documents(document)
+text_splitter = CharacterTextSplitter(separator=" ", chunk_size=12000)
+# Split text into smaller chunks and create Document objects
+texts = text_splitter.split_text(source)
+docs = [Document(page_content=t) for t in texts]
 
 model = load_summarize_chain(llm=llm, chain_type="refine", verbose=True)
 model.run(docs)

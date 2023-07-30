@@ -44,9 +44,9 @@ def quiz_pydantic_prompt(parser: PydanticOutputParser):
         SystemMessagePromptTemplate.from_template(
             "Quiz question has {alternative_count} options."),
         SystemMessage(content=parser.get_format_instructions()),
-        HumanMessagePromptTemplate.from_template("""Generate a multiple-choice quiz with {question_count} questions using the following:
+        HumanMessagePromptTemplate.from_template("""Generate a multiple-choice {language} quiz with {question_count} questions from the following:
 
         {text}
 
-        QUIZ IN {language}:""")
+        """)
     ])

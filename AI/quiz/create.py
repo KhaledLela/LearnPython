@@ -26,8 +26,8 @@ def make_quiz(summary):
     # Load environment variables from .env file
     load_dotenv()
     # Initialize OpenAI model and text splitter
-    # model_name="gpt-4",
-    llm = ChatOpenAI(openai_api_key=os.getenv("OPENAI_API_KEY"))
+    # model_name="gpt-4-32k",
+    llm = ChatOpenAI(model_name="gpt-4", openai_api_key=os.getenv("OPENAI_API_KEY"))
     # Set up a parser + inject instructions into the prompt template.
     parser = PydanticOutputParser(pydantic_object=Quiz)
     prompt = quiz_pydantic_prompt(parser)

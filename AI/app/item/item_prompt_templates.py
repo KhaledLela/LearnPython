@@ -6,8 +6,7 @@ from langchain.schema import SystemMessage
 
 
 def language_structure():
-    with open('lang.csv') as file:
-        return file.read()
+    return "1,en-US,4,sv,5,es,6,ar,7,fr,8,yo,9,de,10,ot,11,ta,12,pt-BR"
 
 
 def item_create_prompt(parser: PydanticOutputParser):
