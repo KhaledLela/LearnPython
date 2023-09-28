@@ -27,4 +27,17 @@ from typing import List
 
 class Solution:
     def findKthPositive(self, arr: List[int], k: int) -> int:
-        pass
+        missing_arr = []
+        for i in range(1, len(arr) + k + 1):
+            if i not in arr:
+                missing_arr.append(i)
+
+            if len(missing_arr) == k:
+                return missing_arr[k - 1]
+
+
+sol = Solution()
+arr = [1, 2, 3, 4]
+k = 2
+k_value = sol.findKthPositive(arr, k)
+print(k_value)
