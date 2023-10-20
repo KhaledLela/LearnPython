@@ -35,9 +35,23 @@ class Solution:
             if len(missing_arr) == k:
                 return missing_arr[k - 1]
 
+    # def findKthPositive(self, arr, k):
+    #     left, right = 0, len(arr) - 1
+    #
+    #     while left <= right:
+    #         mid = left + (right - left) // 2
+    #         missing_numbers = arr[mid] - mid - 1
+    #
+    #         if missing_numbers < k:
+    #             left = mid + 1
+    #         else:
+    #             right = mid - 1
+    #
+    #     return left + k
+
 
 sol = Solution()
-arr = [1, 2, 3, 4]
-k = 2
+arr = [4, 5, 6, 7]  # [1,2]
+k = 2  # 3
 k_value = sol.findKthPositive(arr, k)
 print(k_value)
