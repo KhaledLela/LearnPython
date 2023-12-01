@@ -112,7 +112,7 @@ def binary_search(list, item):
         return None
 
 
-my_list = [1, 3, 5, 7, 9]
+# my_list = [1, 3, 5, 7, 9]
 # low and high keep track of which part of the list you’ll search in.
 # While you haven’t narrowed it down to one element ...
 # ... check the middle element. Found the item.
@@ -121,4 +121,4 @@ my_list = [1, 3, 5, 7, 9]
 # print(binary_search(my_list, 3))  # => 1 print binary_search(my_list, -1) # =
 
 
-
+print(15 % 100)

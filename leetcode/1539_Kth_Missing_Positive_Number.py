@@ -26,32 +26,32 @@ from typing import List
 
 
 class Solution:
-    def findKthPositive(self, arr: List[int], k: int) -> int:
-        missing_arr = []
-        for i in range(1, len(arr) + k + 1):
-            if i not in arr:
-                missing_arr.append(i)
+    # def findKthPositive(self, arr: List[int], k: int) -> int:
+    #     missing_arr = []
+    #     for i in range(1, len(arr) + k + 1):  # O(n)
+    #         if i not in arr:
+    #             missing_arr.append(i)
+    #
+    #         if len(missing_arr) == k:
+    #             return missing_arr[k - 1]
 
-            if len(missing_arr) == k:
-                return missing_arr[k - 1]
+    def findKthPositive(self, arr, k):
+        left, right = 0, len(arr) - 1
 
-    # def findKthPositive(self, arr, k):
-    #     left, right = 0, len(arr) - 1
-    #
-    #     while left <= right:
-    #         mid = left + (right - left) // 2
-    #         missing_numbers = arr[mid] - mid - 1
-    #
-    #         if missing_numbers < k:
-    #             left = mid + 1
-    #         else:
-    #             right = mid - 1
-    #
-    #     return left + k
+        while left <= right:
+            mid = left + (right - left) // 2  # 4/2 = 2.0 && //=2 && %=0
+            missing_numbers = arr[mid] - mid - 1
+
+            if missing_numbers < k:
+                left = mid + 1
+            else:
+                right = mid - 1
+
+        return left + k
 
 
 sol = Solution()
-arr = [4, 5, 6, 7]  # [1,2]
-k = 2  # 3
+arr = [1, 2, 4, 5, 6, 7]  # [3,8]
+k = 2  # 2
 k_value = sol.findKthPositive(arr, k)
 print(k_value)
