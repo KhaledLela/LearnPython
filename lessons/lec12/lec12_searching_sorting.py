@@ -6,31 +6,30 @@ Created on Wed Oct 19 09:21:39 2016
 """
 
 
-def bubble_sort(L):
-    swap = False
-    while not swap:
-        print('bubble sort: ' + str(L))
-        swap = True
-        for j in range(1, len(L)): #
-            if L[j - 1] > L[j]:
-                swap = False
-                temp = L[j]
-                L[j] = L[j - 1]
-                L[j - 1] = temp
-
-
-testList = [5, 3, 1, 7, 2, 6, 25, 18, 13]
-
-print('')
-print(bubble_sort(testList))
-print(testList)
-
+# def bubble_sort(L):
+#     swap = False
+#     while not swap:  # O(n)
+#         print('bubble sort: ' + str(L))
+#         swap = True
+#         for j in range(1, len(L)):  # O(n)
+#             if L[j - 1] > L[j]:
+#                 swap = False
+#                 temp = L[j]
+#                 L[j] = L[j - 1]
+#                 L[j - 1] = temp
+#
+#
+# testList = [5, 3, 1, 7, 2, 6, 25, 18, 13]
+#
+# print('')
+# print(bubble_sort(testList))
+# print(testList)
 
 # def selection_sort(L):
 #     suffixSt = 0
-#     while suffixSt != len(L):
+#     while suffixSt != len(L):  # O(n)
 #         print('selection sort: ' + str(L))
-#         for i in range(suffixSt, len(L)):
+#         for i in range(suffixSt + 1, len(L)):  # O(n)
 #             if L[i] < L[suffixSt]:
 #                 L[suffixSt], L[i] = L[i], L[suffixSt]
 #         suffixSt += 1
