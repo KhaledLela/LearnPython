@@ -1,6 +1,5 @@
-import os
 import json
-import boto3
+
 from dotenv import load_dotenv
 
 from item.item_handler import item_prompt
@@ -50,7 +49,5 @@ def invokeSummarizeFunction(source):
     return response.json()
 
 
-event = {"action_type": "quote", "prompt": "add more 5",
-         "source": "{\"text\":\"<ol>\\n<li>The Great Pyramids of Giza<\\\/li>\\n<li>The Sphinx<\\\/li>\\n<li>The Egyptian Museum<\\\/li>\\n<li>Karnak Temple Complex<\\\/li>\\n<li>Valley of the Kings<\\\/li>\\n<li>Ancient City of Luxor<\\\/li>\\n<li>Abu Simbel<\\\/li>\\n<li>White Desert<\\\/li>\\n<li>Mount Sinai<\\\/li>\\n<li>Alexandria<\\\/li>\\n<\\\/ol>\"}"}
-
+event = {"action_type": "prompt", "prompt": "List design patterns with explanation?", "source": ""}
 lambda_handler(event, None)

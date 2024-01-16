@@ -1,8 +1,8 @@
 from langchain.output_parsers import PydanticOutputParser
-from langchain.prompts import (ChatPromptTemplate,
-                               HumanMessagePromptTemplate,
-                               SystemMessagePromptTemplate)
 from langchain.schema import SystemMessage
+from langchain_core.prompts import (ChatPromptTemplate,
+                                    HumanMessagePromptTemplate,
+                                    SystemMessagePromptTemplate)
 
 
 def language_structure():

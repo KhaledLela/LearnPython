@@ -1,13 +1,11 @@
 import json
-import os
 import re
-from langchain import LLMChain
-from langchain.chat_models import ChatOpenAI
-from langchain.output_parsers import PydanticOutputParser
 
+from LearnPython.AI.app.item.item_prompt_templates import (item_title_prompt, item_regenerate_prompt,
+                                                           item_translate_prompt,
+                                                           item_follow_up_prompt, item_create_prompt)
 from LearnPython.AI.app.item.resource_item_pydantic import ResourceItem
-from LearnPython.AI.prompt.prompt_templates import item_title_prompt, item_regenerate_prompt, item_translate_prompt, \
-    item_follow_up_prompt, item_create_prompt
+from LearnPython.AI.app.util import get_LLMChain, get_output_parser
 
 
 def item_prompt(event):
@@ -23,12 +21,10 @@ def create_item(params):
     """
       Load and run create item chain
     """
-    llm = ChatOpenAI(model_name="gpt-4",
-                     openai_api_key=os.getenv("OPENAI_API_KEY"))
     # Set up a parser + inject instructions into the prompt template.
-    parser = PydanticOutputParser(pydantic_object=ResourceItem)
+    parser = get_output_parser(ResourceItem)
     prompt_template = map_prompt(parser, params)
-    chain = LLMChain(llm=llm, verbose=True, prompt=prompt_template)
+    chain = get_LLMChain(prompt_template)
     result = chain.generate(input_list=[params])
     print(result)
 
