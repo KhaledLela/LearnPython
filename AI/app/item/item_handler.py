@@ -34,8 +34,8 @@ def create_item(params):
         item = parser.parse(output).dict()
     except Exception as ex:
         print(ex)
-        match = re.search(r'"text": "(.*?)",', output, re.DOTALL)
-        item = {'text': match.group(1)} if match else {'text': output}
+        match = re.search(r'"content": "(.*?)",', output, re.DOTALL)
+        item = {'content': match.group(1)} if match else {'content': output}
     id = str(result.run[0].run_id)
 
     return {'prompt_uuid': id} | item | token_usage

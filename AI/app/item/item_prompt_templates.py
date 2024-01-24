@@ -1,7 +1,7 @@
 from langchain.output_parsers import PydanticOutputParser
 from langchain.schema import SystemMessage
 from langchain_core.prompts import (ChatPromptTemplate,
-                                    HumanMessagePromptTemplate,
+                                    MessagesPlaceholder, HumanMessagePromptTemplate,
                                     SystemMessagePromptTemplate)
 
 
@@ -19,7 +19,11 @@ def item_create_prompt(parser: PydanticOutputParser):
 
         Prompt: {prompt}
 
-        Please provide a response item that follows the output schema in the prompt language.""")
+        ```
+        Please provide a response item with a comprehensive and informative detailed content, 
+        formatted in HTML thorough [text] with in-depth explanations, examples, and instances to illustrate key points. 
+        Ensure the response follows the output schema outlined in the prompt language. 
+        ```""")
     ])
 
 
@@ -29,9 +33,8 @@ def item_follow_up_prompt(parser: PydanticOutputParser):
             "You are a helpful assistant that provide a relevant item that follows up from a given item."),
         SystemMessage(content=f"Language ids: {language_structure()}"),
         SystemMessage(content=parser.get_format_instructions()),
+        MessagesPlaceholder(variable_name="source"),
         HumanMessagePromptTemplate.from_template("""Your job is to provide a final item from the following item answer the question:
-
-        Item: {source}
 
         Question: {prompt}
 

@@ -49,5 +49,5 @@ def invokeSummarizeFunction(source):
     return response.json()
 
 
-event = {"action_type": "prompt", "prompt": "List design patterns with explanation?", "source": ""}
+event = {"action_type": "prompt", "prompt": "curriculum of ml", "source": ""}
 lambda_handler(event, None)
